@@ -7,3 +7,4 @@
 
 import Foundation
 
+print(isMonotonic([1, 2, 2, 3]))
