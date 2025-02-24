@@ -7,4 +7,4 @@
 
 import Foundation
 
-print(isMonotonic([1, 2, 2, 3]))
+print(isMonotonic([1, 1, 0]))

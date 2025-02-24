@@ -19,19 +19,31 @@ func isMonotonic(_ nums: [Int]) -> Bool {
     var index = 0
     var growing = true
     var downing = false
-    if nums[0] > nums[1] {
+    while true{
+        if index == nums.count-1 {
+            return true
+        }
+        if nums[index] != nums[index+1] {
+        break
+        }
+        index += 1
+        
+    }
+        if nums[index] > nums[index+1] {
         growing = false
         downing = true
     }
     
+    index = 0
+    
     while index < nums.count-1 {
         if growing {
-            if nums[index] > nums[index+1] {
+            if !(nums[index] <= nums[index+1]) {
                 return false
             }
         }
         if downing {
-            if nums[index] < nums[index+1] {
+            if !(nums[index] >= nums[index+1]) {
                 return false
             }
             
