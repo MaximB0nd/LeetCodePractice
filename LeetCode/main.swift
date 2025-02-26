@@ -7,4 +7,9 @@
 
 import Foundation
 
-print(isMonotonic([1, 1, 0]))
+let a = ["This", "is", "an", "example", "of", "text", "justification."]
+let b = ["Thiis"]
+let c = ["What","must","be","acknowledgment","shall","be"]
+let d = ["Science", "is", "what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"]
+
+print(fullJustify(c, 16))
