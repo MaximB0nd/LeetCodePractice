@@ -20,7 +20,7 @@ import Foundation
 
 func fullJustify(_ words: [String], _ maxWidth: Int) -> [String] {
     var result: [String] = []
-    var text = [String]()
+    var text: [String] = []
     var lenOfWords: Int = 0
     var spaces = 0
     
@@ -40,9 +40,7 @@ func fullJustify(_ words: [String], _ maxWidth: Int) -> [String] {
     
     result.append(textPlusSpaces(text, maxWidth))
     
-    for text in result{
-        print(text)
-    }
+
     
     return result
     
@@ -69,7 +67,7 @@ func textPlusSpaces(_ text: [String], _ len: Int,  _ spaces: Int,  _ maxWidth: I
                 index += 1
             }
         }
-        
+    
         
     }
     return text.joined()
