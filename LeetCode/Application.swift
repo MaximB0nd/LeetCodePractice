@@ -17,10 +17,8 @@ let d = ["Science", "is", "what","we","understand","well","enough","to","explain
 @main
 struct AppApplication {
     static func main() throws{
-        var  a = [1,2,3]
-        var b = [1,1]
-        var c = [2,2,3,1]
-        print(maximumProduct(a))
+        var a = 121
+        print(isPalindrome(a))
        
     }
 }
