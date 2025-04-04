@@ -15,11 +15,15 @@ import Foundation
 
 
 func maximumProduct(_ nums: [Int]) -> Int {
-    let one = nums.max()!
-    let two = (nums.filter({$0 != nums.max()!})).max()!
-    let three = nums.filter({$0 != nums.max()! && $0 != (nums.filter({$0 != nums.max()!})).max()!}).max()!
+    var nums = nums
+    nums.sort(by: compare)
+    
+    print(nums)
+    return nums[nums.count - 3] * nums[nums.count - 2] * nums[nums.count - 1]
+    
+    
+}
 
-    return (one * two * three)
-    
-    
+func compare(_ lhs: Int, _ rhs: Int) -> Bool {
+    return abs(lhs) < abs(rhs)
 }

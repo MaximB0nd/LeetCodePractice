@@ -17,8 +17,8 @@ let d = ["Science", "is", "what","we","understand","well","enough","to","explain
 @main
 struct AppApplication {
     static func main() throws{
-        var a = 121
-        print(isPalindrome(a))
-       
+        let a = [1,0,1,0,1,0,1]
+        let b = "abd"
+        print(productExceptSelf([1, 2, 3, 4]))
     }
 }
