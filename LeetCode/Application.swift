@@ -17,8 +17,10 @@ let d = ["Science", "is", "what","we","understand","well","enough","to","explain
 @main
 struct AppApplication {
     static func main() throws{
-        let a = [1,0,1,0,1,0,1]
-        let b = "abd"
-        print(productExceptSelf([1, 2, 3, 4]))
+        let a = [2,4,-2,-3]
+        let b = [1,5,0,4,1,3]
+        let c = [2,1,5,0,4,6]
+        let d = [0,4,2,1,0,-1,-3]
+        print(increasingTriplet(d))
     }
 }
