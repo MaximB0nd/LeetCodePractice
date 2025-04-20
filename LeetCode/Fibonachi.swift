@@ -58,7 +58,19 @@ func stepsMap(steps: Array<Int>) -> [Int] {
         }
         
         else {
-            
+            if resCost[i-2] > resCost[i-1]{
+                if map[map.count-1] != i-2 {
+                    map.append(i-2)
+                }
+                resCost[i] = resCost[i-2] + steps[i]
+            }
+            else {
+                if map[map.count-1] != i-2 {
+                    
+                    map.append(i-1)
+                }
+                resCost[i] = resCost[i-1] + steps[i]
+            }
             
         }
     }
