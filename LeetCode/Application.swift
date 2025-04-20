@@ -11,6 +11,6 @@ import Foundation
 @main
 struct AppApplication {
     static func main() throws{
-        AcontainsInB()
+        mnogoInt()
     }
 }
