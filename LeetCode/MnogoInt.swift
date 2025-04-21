@@ -7,15 +7,28 @@
 
 import Foundation
 
+struct valueArr : Equatable {
+    let key: Int
+    let value: Int
+    
+    init(_ key: Int, _ value: Int) {
+        self.key = key
+        self.value = value
+    }
+    
+    static func == (lhs: valueArr, rhs: valueArr) -> Bool {
+        return lhs.value == rhs.value
+    }
+}
+
 func mnogoInt() {
     let k = Int(readLine()!)!
-    let _ = Int(readLine()!)!
+    let n = Int(readLine()!)!
     let vals = readLine()!.split(separator: " ")
     var nums: [Int] = []
-    for i in 0..<vals.count {
-        if (!vals[i].isEmpty) {
-            nums.append(Int(vals[i])!)
-        }
+    for i in stride(from: 0, to: n, by: 1) {
+        print(i, vals[i])
+        nums.append(Int(vals[i])!)
     }
     
     var dict: [Int: Int] = [:]
@@ -28,21 +41,24 @@ func mnogoInt() {
         }
     }
     
-    var res = [Int]()
+    
+    
+    var result: [valueArr] = []
     
     for (key, value) in dict {
-        if (res.count < k) {
-            res.append(key)
+        if (result.count < k) {
+            result.append(valueArr(key, value))
         }
         else {
-            if (res.contains(where: {dict[$0]! < value })) {
-                res.remove(at: res.firstIndex(where: {dict[$0]! < value })!)
-                res.append(key)
+            if (result.contains(where: {$0.value < value })) {
+                result[result.firstIndex(of: result.min(by: {$0.value < $1.value})!)!] = valueArr(key, value)
             }
         }
     }
     
-    print(res)
+    
+    print(result)
+    print(result.sorted(by: {$0.value > $1.value}).map({String($0.key)}).joined(separator: " "))
     
     
     
