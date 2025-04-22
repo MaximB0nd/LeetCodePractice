@@ -11,6 +11,6 @@ import Foundation
 @main
 struct AppApplication {
     static func main() throws{
-        mnogoInt()
+        print(bagWeigthMoney(9, [(2, 2), (3, 1), (5, 4), (2, 4)]))
     }
 }
